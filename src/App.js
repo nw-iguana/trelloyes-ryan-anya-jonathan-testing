@@ -11,15 +11,14 @@ class App extends Component {
 
 
     return (
-      <main store={this.props.store}>
-        <header>
+      <main store={this.props.store} className="App">
+        <header className="App-header">
           <h1>Trelloyes!</h1>
         </header>
         <div className="App-list">
           {this.props.store.lists.map((list)=>{
-              return <List key={list.id} cards={list.cardIds} header={list.header}/>
+            return <List key={list.id} cards={list.cardIds} header={list.header} store={this.props.store} />
           }
-          
           )}
     
         </div>
